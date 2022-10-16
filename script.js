@@ -56,22 +56,58 @@ const listaComida=[];
 
 // listaComida.push(comida1,comida2,comida3);
 
-if(comida1.disponibilidadeComida===true){
-    listaComida.push(comida1);
-}else {
-    alert(`Não há disponibilidade de ${comida1.nome}`)
-}
-if(comida2.disponibilidadeComida===true){
-    listaComida.push(comida2);
-}else {
-    alert(`Não há disponibilidade de ${comida2.nome}`)
-}
-if(comida3.disponibilidadeComida===true){
-    listaComida.push(comida3);
-}else {
-    alert(`Não há disponibilidade de ${comida3.nome}`)
+// if(comida1.disponibilidadeComida===true){
+//     listaComida.push(comida1);
+// }else {
+//     alert(`Não há disponibilidade de ${comida1.nome}`)
+// }
+// if(comida2.disponibilidadeComida===true){
+//     listaComida.push(comida2);
+// }else {
+//     alert(`Não há disponibilidade de ${comida2.nome}`)
+// }
+// if(comida3.disponibilidadeComida===true){
+//     listaComida.push(comida3);
+// }else {
+//     alert(`Não há disponibilidade de ${comida3.nome}`)
+// }
+
+// console.log(listaComida)
+
+//Crie uma função que receba como parâmetro um objeto, e 
+//devolva a string do relatório com os dados do objeto.
+function devolveDados(comida){
+    let relatorio = "";
+
+    relatorio= `
+    Nome: ${comida.nome}
+    Quantidade de Comida: ${comida.quantidadeComida}
+    Disponibilidade: ${comida.disponibilidadeComida}
+    Tipos de comida: ${comida.tipoComida}`
+
+    return relatorio;
+
 }
 
-console.log(listaComida)
+// for (let i=0; i < listaComida.length;i++){
+//     console.log(devolveDados(listaComida[i]))
+// }
 
+// Crie uma função que recebe um array de objetos e uma 
+// string. Esta função deve retornar um objeto, e o objeto
+// retornado deve possuir apenas os itens que tenham o 
+// nome/título igual à string passada como parâmetro. Caso
+// não exista um item, exiba um ALERT indicando que nenhum 
+// item foi encontrado.
 
+function buscaNome(lista,string){
+
+   let resultado = lista.filter(i => string === i.nome);
+   if (resultado.length===0){
+    alert("NENHUM ITEM FOI ENCONTRADO")
+   } else {
+    return resultado
+   }
+
+}
+console.log(buscaNome(listaComida,"banana"))
